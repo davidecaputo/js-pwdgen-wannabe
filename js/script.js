@@ -6,8 +6,12 @@ let colore = prompt('Qual è il tuo colore preferito?');
 
 console.log(nome + cognome + colore + numero);
 if(nome && cognome && colore){
-    document.getElementById("password").innerHTML = (nome + cognome + colore + numero);
-}
-else{
+    if(isNaN(parseInt(nome)) && isNaN(parseInt(cognome)) && isNaN(parseInt(colore))){
+        document.getElementById("password").innerHTML = (nome + cognome + colore + numero);
+    }
+    else{
+        document.getElementById("password").innerHTML = ('Inserisci valori validi');    
+    }
+} else {
     document.getElementById("password").innerHTML = ('Inserisci valori validi');
 }
